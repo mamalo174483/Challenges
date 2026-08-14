@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
@@ -10,39 +11,209 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+       @font-face {
+        font-family: 'Work Sans';
+        src: url('./fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+        font-weight: 100 900;
+      }
+        body {
+      margin: 0;
+      background-color: rgb(172, 248, 248);
+      font-family: 'Work Sans';
+      min-height: 100vh;
+      padding-bottom: 100px;
+      
+       }
+    .bg-top {
+      width: 100%;
+      height: 300px; 
+      background-color: hsl(281, 39%, 14%);
+      background-image: url('./assets/images/background-pattern-desktop.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+        .main {
+      
+      position: absolute;
+      top: 200px;  
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      max-width: 600px;
+      width: 90%;
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .in-main{
+      display: grid;
+      padding-left: 30px;
+      padding-right: 30px;
+      
+    }
+    .title {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 18px;
+      
+      font-size: 50px;
+      
+
+    }
+    .f1{
+      cursor: pointer;
+      transition: 0.3s;
+      display: grid;
+      grid-template-columns: auto 45px;
+      align-items: center;
+      gap: 80px;
+      font-weight: bold;
+      font-size: 17px;
+      font-family: Arial, Helvetica, sans-serif;
+      
+      
+      
+    }
+    .f1:hover{
+      color: rgb(74, 74, 244);
+    }
+
+    .active .f1 img {
+      content: url("assets/images/icon-minus.svg");
+      
+      
+    }
+    .f1 span {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.f1 img {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  transition: opacity 0.3s ease;
+}
+
+.f1 .plus {
+  opacity: 1;
+}
+
+.f1 .minus {
+  opacity: 0;
+}
+
+.active .f1 .plus {
+  opacity: 0;
+}
+
+.active .f1 .minus {
+  opacity: 1;
+}
+    .answer1 {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    }
+
+    .active .answer1 {
+      max-height: 200px;
+    }
+   
+
+@media (max-width: 700px) {
+  .main {
+    
+    padding: 30px 24px;
+    border-radius: 12px;
+    max-width: 70%;
+  }
+}
+
   </style>
 </head>
 <body>
+  <div class="bg-top"></div>
+  <div class="main">
+  <div class="in-main">
+  <h1 class="title">
+    <img src="assets/images/icon-star.svg" alt="tung">
+    FAQs
+  </h1>
 
-  FAQs
 
-  What is Frontend Mentor, and how will it help me?
 
-  Frontend Mentor offers realistic coding challenges to help developers improve their 
-  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-  all levels and ideal for portfolio building.
+<div class="area1">
+  <p class="f1">
+    What is Frontend Mentor, and how will it help me?
+      <span>
+    <img class="plus" src="assets/images/icon-plus.svg" alt="">
+    <img class="minus" src="assets/images/icon-minus.svg" alt="">
+  </span>
+  </p>
 
-  Is Frontend Mentor free?
+  <div class="answer1">
+    Frontend Mentor offers realistic coding challenges to help developers improve
+    their frontend coding skills with projects in HTML, CSS, and JavaScript.
+    It's suitable for all levels and ideal for portfolio building.
+  </div>
+</div>
 
-  Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
-  option providing access to a range of projects suitable for all skill levels.
 
-  Can I use Frontend Mentor projects in my portfolio?
+<div class="area1">
+  <p class="f1">
+    Is Frontend Mentor free?
+    <span>
+    <img class="plus" src="assets/images/icon-plus.svg" alt="">
+    <img class="minus" src="assets/images/icon-minus.svg" alt="">
+  </span>
+  </p>
 
+  <div class="answer1">
+    Yes, Frontend Mentor offers both free and premium coding challenges, with the free
+    option providing access to a range of projects suitable for all skill levels.
+  </div>
+</div>
+
+
+
+  <div class="area1">
+  <p class="f1">Can I use Frontend Mentor projects in my portfolio?  <span>
+    <img class="plus" src="assets/images/icon-plus.svg" alt="">
+    <img class="minus" src="assets/images/icon-minus.svg" alt="">
+  </span></p>
+  <div class="answer1">
   Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
   way to showcase your skills to potential employers!
+  </div>
+</div>
 
-  How can I get help if I'm stuck on a Frontend Mentor challenge?
-  
+<div class="area1">
+  <p class="f1">How can I get help if I'm stuck on a Frontend Mentor challenge?  <span>
+    <img class="plus" src="assets/images/icon-plus.svg" alt="">
+    <img class="minus" src="assets/images/icon-minus.svg" alt="">
+  </span></p>
+  <div class="answer1">
   The best place to get help is inside Frontend Mentor's Discord community. There's a help 
   channel where you can ask questions and seek support from other community members.
+</div>
+  </div>
 
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
+
+
+  </div>
+  </div>
+  <script>
+   let area1 = document.querySelectorAll(".area1");
+
+     area1.forEach(function (item) {
+    item.addEventListener("click", function () {
+    item.classList.toggle("active");
+  });
+});
+  </script>
 </body>
 </html>
